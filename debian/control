@@ -1,0 +1,12 @@
+Source: liascript-devserver
+Section: web
+Priority: optional
+Maintainer: LiaScript Team <team@liascript.org>
+Build-Depends: debhelper-compat (= 13), nodejs (>= 14.0.0)
+
+Package: liascript-devserver
+Architecture: all
+Depends: nodejs (>= 14.0.0), ${misc:Depends}
+Description: LiaScript Development Server
+ A development server for LiaScript that provides
+ live-reload capabilities and course preview functionality.

@@ -1,0 +1,2 @@
+#!/bin/sh
+NODE_PATH=/usr/lib/liascript-devserver node /usr/lib/liascript-devserver/index.js "$@"
