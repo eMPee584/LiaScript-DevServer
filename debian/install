@@ -1,2 +1,2 @@
 dist/* usr/lib/liascript-devserver/
-dist/bin/liascript-devserver usr/bin/
+bin/liascript-devserver usr/bin/
