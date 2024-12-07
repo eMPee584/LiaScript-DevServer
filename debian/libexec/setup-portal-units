@@ -1,0 +1,11 @@
+#!/bin/bash
+
+# Create portal-units directory if it doesn't exist
+mkdir -p "$HOME/.local/share/portal-units"
+
+# Check if schulstick tutor directory exists and create symlink if needed
+if [ -d "/usr/share/schulstick/tutor-next" ]; then
+    if [ ! -L "$HOME/.local/share/portal-units/tutor-next" ]; then
+        ln -sf "/usr/share/schulstick/tutor-next" "$HOME/.local/share/portal-units/tutor-next"
+    fi
+fi
