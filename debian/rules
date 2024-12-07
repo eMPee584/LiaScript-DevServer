@@ -1,0 +1,11 @@
+#!/usr/bin/make -f
+%:
+	dh $@
+
+override_dh_auto_build:
+	npm install
+	npm run build
+
+override_dh_auto_clean:
+	npm clean
+	dh_auto_clean

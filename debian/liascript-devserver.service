@@ -1,0 +1,13 @@
+[Unit]
+Description=LiaScript Development Server
+After=network.target
+
+[Service]
+Type=simple
+User=liascript
+ExecStart=/usr/bin/liascript-devserver
+Restart=on-failure
+Environment=PORT=3000
+
+[Install]
+WantedBy=multi-user.target
