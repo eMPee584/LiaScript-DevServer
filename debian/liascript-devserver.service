@@ -5,7 +5,7 @@ After=network.target
 [Service]
 Type=simple
 User=liascript
-ExecStart=/usr/bin/liascript-devserver
+ExecStart=/usr/lib/liascript-devserver/bin/liascript-devserver
 Restart=on-failure
 Environment=PORT=3000
 
