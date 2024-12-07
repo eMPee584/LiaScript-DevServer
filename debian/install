@@ -1,2 +1,3 @@
 dist/* usr/lib/liascript-devserver/
 bin/liascript-devserver usr/bin/
+debian/liascript-devserver.service usr/lib/systemd/user/
