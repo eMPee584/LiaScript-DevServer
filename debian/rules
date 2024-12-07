@@ -10,12 +10,15 @@ override_dh_auto_build:
 	npm install --verbose
 	@echo "=== Building project ==="
 	npm run build --verbose
+	@echo "=== Creating standalone executable ==="
+	mkdir -p release/linux
+	npx pkg . -t node18-linux --output release/linux/liascript-devserver
 	@echo "=== Build completed ==="
 
 # Override default clean step
 override_dh_auto_clean:
 	@echo "=== Cleaning build artifacts ==="
 	dh_auto_clean
-	@echo "=== Removing node_modules ==="
-	rm -rf node_modules/
+	@echo "=== Removing node_modules and release ==="
+	rm -rf node_modules/ release/
 	@echo "=== Clean completed ==="
