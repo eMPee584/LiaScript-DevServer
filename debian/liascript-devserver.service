@@ -4,10 +4,9 @@ After=network.target
 
 [Service]
 Type=simple
-User=liascript
-ExecStart=/usr/lib/liascript-devserver/bin/liascript-devserver
+ExecStart=/usr/bin/liascript-devserver --input %h/.local/share/portal-units
 Restart=on-failure
 Environment=PORT=3000
 
 [Install]
-WantedBy=multi-user.target
+WantedBy=default.target
