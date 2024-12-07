@@ -1,10 +1,21 @@
 #!/usr/bin/make -f
+
+# Default debhelper rule
 %:
 	dh $@
 
+# Override default build step
 override_dh_auto_build:
-	npm install
-	npm run build
+	@echo "=== Installing npm dependencies ==="
+	npm install --verbose
+	@echo "=== Building project ==="
+	npm run build --verbose
+	@echo "=== Build completed ==="
 
+# Override default clean step
 override_dh_auto_clean:
+	@echo "=== Cleaning build artifacts ==="
 	dh_auto_clean
+	@echo "=== Removing node_modules ==="
+	rm -rf node_modules/
+	@echo "=== Clean completed ==="
