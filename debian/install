@@ -1,2 +1,3 @@
 release/linux/liascript-devserver usr/bin/
 debian/liascript-devserver.service usr/lib/systemd/user/
+debian/libexec/setup-portal-units usr/libexec/

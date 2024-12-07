@@ -4,6 +4,7 @@ After=network.target
 
 [Service]
 Type=simple
+ExecStartPre=/usr/libexec/setup-portal-units
 ExecStart=/usr/bin/liascript-devserver --input %h/.local/share/portal-units
 Restart=on-failure
 Environment=PORT=3000
