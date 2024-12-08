@@ -1,0 +1,51 @@
+name: Release Debian
+
+on:
+  push:
+    tags:
+      - 'v*'
+  workflow_dispatch:
+
+jobs:
+  release_debian:
+    runs-on: ubuntu-latest
+    container:
+      image: debian:bookworm-slim
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Install build dependencies
+        run: |
+          apt-get update
+          apt-get install -y build-essential debhelper devscripts nodejs npm 
+     
+      - name: Building Package
+        run: |
+          npm install -g pkg
+
+          npm install
+          npm run build
+          npx pkg . -t node18-linux --output release/linux/liascript-devserver
+
+      - name: Build Debian package
+        run: dpkg-buildpackage -us -uc
+
+      - name: Move Debian packages
+        run: |
+          mkdir -p artifacts
+          mv ../*.deb artifacts/
+          mv ../*.buildinfo artifacts/
+          
+      - name: Upload artifacts
+        uses: actions/upload-artifact@v3
+        with:
+          name: debian-packages
+          path: artifacts/
+          
+      - name: Create Release
+        uses: softprops/action-gh-release@v1
+        with:
+          files: artifacts/*.deb
+          generate_release_notes: true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
