@@ -8,6 +8,7 @@ name: Publish on NPM
 
 jobs:
   build:
+    if: github.repository == 'LiaScript/LiaScript-DevServer'
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Code
