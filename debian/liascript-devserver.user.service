@@ -4,8 +4,8 @@ After=network.target
 
 [Service]
 Type=simple
-ExecStartPre=/usr/libexec/setup-portal-units
-ExecStart=/usr/bin/liascript-devserver --input %h/.local/share/portal-units
+ExecStartPre=/usr/libexec/liascript-portal-link-courses
+ExecStart=/usr/bin/liascript-devserver --input %h/.local/share/learning-portal/courses
 Restart=on-failure
 Environment=PORT=3000
 

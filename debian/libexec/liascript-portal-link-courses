@@ -1,0 +1,16 @@
+#!/bin/bash
+# Link learning portal courses to user home
+
+COURSES="learning-portal/courses"
+
+# liascript-devserver will serve this directory
+TARGET="$HOME/.local/share/$COURSES"
+mkdir -p "$TARGET"
+
+# only iterate if glob not empty
+shopt -s nullglob
+
+for COURSEDIR in /usr/share/$COURSES/*/; do
+    NAME=$(basename "$COURSEDIR")
+    [ ! -e "$TARGET/$NAME" ] && ln -s "$COURSEDIR" "$TARGET/$NAME"
+done

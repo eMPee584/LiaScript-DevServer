@@ -1,2 +1,2 @@
 release/linux/liascript-devserver usr/bin/
-debian/libexec/setup-portal-units usr/libexec/
+debian/libexec/liascript-portal-link-courses usr/libexec/
