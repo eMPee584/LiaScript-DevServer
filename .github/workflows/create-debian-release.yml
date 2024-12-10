@@ -1,4 +1,4 @@
-name: Release Debian
+name: Create Debian Package
 
 on:
   push:
