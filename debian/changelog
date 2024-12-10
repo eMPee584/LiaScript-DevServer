@@ -1,5 +1,11 @@
+liascript-devserver (1.1.31-fsfw-3) unstable; urgency=medium
+
+  * Various fixes (installing systemd services, paths and folders).
+
+ -- Schulstick Team <team@schulstick.org>  Tue, 10 Dec 2024 16:08:34 +0100
+
 liascript-devserver (1.1.31) unstable; urgency=medium
 
-  * Initial release.
+  * Debianized package.
 
  -- Schulstick Team <team@schulstick.org>  Sat, 07 Dec 2024 12:00:00 +0100
