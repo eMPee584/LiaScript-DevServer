@@ -12,5 +12,5 @@ shopt -s nullglob
 
 for COURSEDIR in "/usr/share/$COURSES"/*/; do
     NAME=$(basename "$COURSEDIR")
-    [ ! -e "$TARGET/$NAME" ] && ln -s "$COURSEDIR" "$TARGET/$NAME"
+    [ -e "$TARGET/$NAME" ] || ln -s "$COURSEDIR" "$TARGET/$NAME"
 done
