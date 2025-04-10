@@ -1,3 +1,9 @@
+liascript-devserver (1.1.37-fsfw-1) UNRELEASED; urgency=medium
+
+  * Pull in upstream updates and rebuild. 
+
+ -- Schulstick Team <team@schulstick.org>  Thu, 10 Apr 2025 14:46:17 +0200
+
 liascript-devserver (1.1.31-fsfw-3) unstable; urgency=medium
 
   * Various fixes (installing systemd services, paths and folders).
