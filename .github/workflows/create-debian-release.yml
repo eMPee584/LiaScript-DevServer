@@ -37,13 +37,13 @@ jobs:
           mv ../*.buildinfo artifacts/
           
       - name: Upload artifacts
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: debian-packages
           path: artifacts/
           
       - name: Create Release
-        uses: softprops/action-gh-release@v1
+        uses: softprops/action-gh-release@v2.2.2
         with:
           files: artifacts/*.deb
           generate_release_notes: true
