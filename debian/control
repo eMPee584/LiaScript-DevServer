@@ -2,7 +2,7 @@ Source: liascript-devserver
 Section: web
 Priority: optional
 Maintainer: LiaScript Team <team@liascript.org>
-Build-Depends: debhelper-compat (= 13), nodejs (>= 14.0.0)
+Build-Depends: debhelper-compat (= 13), nodejs (>= 14.0.0), npm
 
 Package: liascript-devserver
 Architecture: all
